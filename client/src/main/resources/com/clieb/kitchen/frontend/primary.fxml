@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.text.Font?>
+
+<VBox xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.clieb.kitchen.frontend.controller.PrimaryController">
+    <children>
+        <MenuBar VBox.vgrow="NEVER">
+            <menus>
+                <Menu mnemonicParsing="false" text="File">
+                    <items>
+                        <MenuItem mnemonicParsing="false" text="New" visible="false" />
+                        <MenuItem mnemonicParsing="false" text="Open…" visible="false" />
+                        <Menu mnemonicParsing="false" text="Open Recent" visible="false" />
+                        <SeparatorMenuItem mnemonicParsing="false" visible="false" />
+                        <MenuItem mnemonicParsing="false" text="Close" visible="false" />
+                        <MenuItem fx:id="saveMenuItem" mnemonicParsing="false" text="Save" visible="false" />
+                        <MenuItem mnemonicParsing="false" text="Save As…" visible="false" />
+                        <MenuItem mnemonicParsing="false" text="Revert" visible="false" />
+                        <SeparatorMenuItem mnemonicParsing="false" visible="false" />
+                        <MenuItem fx:id="preferencesMenuItem" mnemonicParsing="false" text="Preferences…" />
+                        <SeparatorMenuItem mnemonicParsing="false" />
+                        <MenuItem fx:id="quitMenuItem" mnemonicParsing="false" text="Quit" />
+                    </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Edit" visible="false">
+                    <items>
+                        <MenuItem mnemonicParsing="false" text="Undo" visible="false" />
+                        <MenuItem mnemonicParsing="false" text="Redo" visible="false" />
+                        <SeparatorMenuItem mnemonicParsing="false" visible="false" />
+                        <MenuItem mnemonicParsing="false" text="Cut" visible="false" />
+                        <MenuItem mnemonicParsing="false" text="Copy" visible="false" />
+                        <MenuItem mnemonicParsing="false" text="Paste" visible="false" />
+                        <MenuItem mnemonicParsing="false" text="Delete" visible="false" />
+                        <SeparatorMenuItem mnemonicParsing="false" visible="false" />
+                        <MenuItem mnemonicParsing="false" text="Select All" visible="false" />
+                        <MenuItem mnemonicParsing="false" text="Unselect All" visible="false" />
+                    </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Help" visible="false">
+                    <items>
+                        <MenuItem mnemonicParsing="false" text="About MyHelloApp" />
+                    </items>
+                </Menu>
+            </menus>
+        </MenuBar>
+        <SplitPane dividerPositions="0.25, 0.75" focusTraversable="true" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
+            <items>
+                <AnchorPane SplitPane.resizableWithParent="false">
+                    <children>
+                        <Label alignment="CENTER" layoutX="14.0" layoutY="14.0" minWidth="60.0" prefHeight="22.0" prefWidth="179.0" style="&#10;" text="Search Recipes" textAlignment="CENTER" wrapText="false">
+                            <font>
+                                <Font size="18.0" fx:id="x1" />
+                            </font>
+                            <textFill>
+                                <Color blue="0.624" green="0.624" red="0.624" fx:id="x2" />
+                            </textFill>
+                        </Label>
+                        <TextField fx:id="recipeSearchTextField" layoutX="21.0" layoutY="50.0" prefHeight="27.0" prefWidth="250.0" />
+                        <Button fx:id="recipeSearchButton" layoutX="117.0" layoutY="88.0" mnemonicParsing="false" text="Search" />
+                    </children>
+                </AnchorPane>
+                <TableView fx:id="recipeResultsTable">
+                    <columns>
+                        <TableColumn fx:id="recipeTitleColumn" prefWidth="300" text="Recipe" />
+                        <TableColumn fx:id="recipeUrlColumn" prefWidth="500" text="Url" />
+                    </columns>
+                </TableView>
+                <AnchorPane>
+                    <children>
+                        <ListView fx:id="ingredientsListView" layoutX="4.0" layoutY="41.0" prefHeight="433.0" prefWidth="297.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="40.0" />              
+                    </children>
+                </AnchorPane>
+            </items>
+            <opaqueInsets>
+                <Insets />
+            </opaqueInsets>
+        </SplitPane>
+        <ScrollPane prefHeight="200.0" prefWidth="200.0">
+            <content>
+                <AnchorPane minHeight="-Infinity" prefWidth="1180.0">
+                    <children>
+                        <FlowPane fx:id="instructionFlowPane" minHeight="-Infinity" minWidth="-Infinity" AnchorPane.bottomAnchor="100.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-413.0" AnchorPane.topAnchor="0.0" />
+                    </children>
+                </AnchorPane>
+            </content>
+        </ScrollPane>
+    </children>
+</VBox>

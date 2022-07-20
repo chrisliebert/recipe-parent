@@ -1,0 +1,15 @@
+micronaut:
+    http:
+        client:
+            read-timeout: 60
+                       
+logger:
+    levels:
+#        io.micronaut.context.DefaultBeanContext: OFF
+#        io.micronaut.context.lifecycle: OFF
+#        io.micronaut.context.env.DefaultEnvironmanet: OFF
+#        io.micronaut.context.DefaultBeanContext: OFF
+#        io.micronaut.context.lifecycle: OFF
+#        io.micronaut.context: ERROR
+#        io.netty.util.internal: ERROR
+        io.netty.handler.ssl: ERROR

@@ -1,0 +1,34 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:pro="http://www.liquibase.org/xml/ns/pro" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/pro http://www.liquibase.org/xml/ns/pro/liquibase-pro-4.7.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.7.xsd">
+    <changeSet id="1" author="chris">
+        <createTable tableName="RECIPE_INGREDIENT">  
+            <column name="RECIPE_INGREDIENT_ID" type="bigint" autoIncrement="true">  
+                <constraints primaryKey="true" nullable="false"/>
+            </column>  
+            <column name="RECIPE_ID" type="bigint">  
+                <constraints nullable="false"/>
+            </column>  
+            <column name="DESCRIPTION" type="varchar2(400)">  
+                <constraints nullable="false"/>
+            </column>
+            <column name="CREATION_DATE" type="timestamp">  
+                <constraints nullable="false"/>  
+            </column>
+            <column name="LAST_MODIFIED" type="timestamp">  
+                <constraints nullable="false"/>
+            </column>
+            <column name="BASE_DESCRIPTION" type="varchar2(200)">  
+                <constraints nullable="true"/>  
+            </column>
+            <column name="QUANTITY_DESCRIPTION" type="varchar2(200)">  
+                <constraints nullable="true"/>  
+            </column>
+            <column name="QUANTITY_AMOUNT" type="varchar2(200)">  
+                <constraints nullable="true"/>  
+            </column>
+            <column name="QUANTITY_UOM" type="varchar2(100)">  
+                <constraints nullable="true"/>  
+            </column>
+        </createTable>
+    </changeSet>
+</databaseChangeLog>

@@ -1,0 +1,13 @@
+datasources:
+  default:
+    url: jdbc:sqlite:settings.db        
+    driverClassName: org.sqlite.JDBC
+jpa:
+ default:
+   packages-to-scan:
+     - ‘com.clieb.kitchen.frontend.model’
+   properties:
+    hibernate:
+    hbm2ddl:
+      auto: update
+    show_sql: true
