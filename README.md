@@ -14,7 +14,7 @@ The recipe-database module requires an installation of MySQL, it uses Liquibase 
 ![alt tag](doc/images/recipeDatabase.png)
 
 # Crawling the Web
-Crawling the allrecipes.com can take several hours to download. The RECIPE_HTML table is all the crawl process will load, it consistes of compressed HTML blobs for each recipe visited. In order to support quick changes to the HTML parsing recipe extraction code is handled separatly by the recipe-server API so this can be re-run without crawling the web.
+Crawling the allrecipes.com can take several hours to download. The RECIPE_HTML table is all the crawl process will load, it stores compressed HTML blobs for each recipe visited. In order to support quick changes to the HTML parsing recipe extraction code is handled separatly by the recipe-server API so this can be re-run without crawling the web.
 
 # Parsing the HTML
 Initiating a GET request to /api/recipe/html/process/all will start the extracting process which will return a list of the URLs that were processed in realtime using Reactive Streams to utilize the full potential of all available CPU cores.
